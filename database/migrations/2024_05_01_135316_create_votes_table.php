@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\Option::class)->constrained()->cascadeOnDelete();
+ // Agree, Disagree, maybe
             $table->timestamps();
         });
     }

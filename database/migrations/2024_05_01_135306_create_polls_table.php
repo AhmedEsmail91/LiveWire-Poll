@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('polls', function (Blueprint $table) {
             $table->id();
+            $table->string('title'); // name for the poll like "What is your favorite programming language?"
             $table->timestamps();
         });
     }

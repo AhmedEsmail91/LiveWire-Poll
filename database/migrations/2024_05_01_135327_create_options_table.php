@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('options', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name'); // PHP, JavaScript, Python, Ruby, Go
             $table->timestamps();
+            $table->foreignId('poll_id')->constrained('polls')->cascadeOnDelete();
         });
     }
 
