@@ -21,11 +21,13 @@
                         </div>
                         <div class="flex">
                             <input type="text" wire:model.live="options.{{$index}}" name="options.{{$index}}">
-                            @error('options.{{$index}}')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            <button class="btn ml-2" wire:click.prevent="removeOption({{$index}})">Remove</button>   
+                            
+                            
+                            <button class="btn ml-2" wire:click.prevent="removeOption({{$index}})">Remove</button> 
+                            
                         </div>
+                        @foreach ($errors->get('options.'.$index) as $message)
+                            <div class="alert alert-danger text-red-500">{{ $message }}</div>@endforeach  
                     </div> 
             @endforeach
         </div>
