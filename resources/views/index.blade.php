@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Livewire Poll</title>
 
@@ -30,15 +30,9 @@
     {{-- blade-formatter-enable --}}
 
         @livewireStyles {{-- Renders the styles needed for Livewire components. --}}
-    </head>
-
-    <body class="container mx-auto mt-10 mb-10 max-w-lg">
-        @livewireScripts {{--  Renders the JavaScript needed for Livewire components. --}}
-        {{-- Include the livewire components --}}
-        {{-- 1st way --}}
-        {{-- @livewire('create-poll')   Renders a Livewire component named 'create-poll'. Livewire is a Laravel package for building dynamic interfaces using server-side code. --}}
-        {{-- 2nd way --}}
-        <livewire:create-poll />
-        {{-- i must pass variable --}}
-    </body>
+</head>
+<body class="container mx-auto mt-10 mb-10 max-w-lg">
+    @livewireScripts
+    <livewire:view-polls />
+</body>
 </html>
