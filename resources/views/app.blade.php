@@ -19,6 +19,7 @@
 
             input, 
             textarea {
+                /* @Apply is a tailwind directive to group some of predefined classes together and naming that ground with single class name */
                 @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
             }
 
@@ -28,10 +29,17 @@
         </style>
     {{-- blade-formatter-enable --}}
 
-        @livewireStyles {{-- livewire styles --}}
+        @livewireStyles {{-- Renders the styles needed for Livewire components. --}}
     </head>
 
     <body class="container mx-auto mt-10 mb-10 max-w-lg">
-        @livewireScripts
+        @livewireScripts {{--  Renders the JavaScript needed for Livewire components. --}}
+        {{-- Include the livewire components --}}
+        {{-- 1st way --}}
+        {{-- @livewire('create-poll')   Renders a Livewire component named 'create-poll'. Livewire is a Laravel package for building dynamic interfaces using server-side code. --}}
+        {{-- 2nd way --}}
+        <livewire:create-poll />
+        {{-- i must pass variable --}}
+        {{-- <livewire:create-poll :counter="$counter" /> --}}
     </body>
 </html>
