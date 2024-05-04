@@ -28,9 +28,13 @@
                         </div>
                         @foreach ($errors->get('options.'.$index) as $message)
                             <div class="alert alert-danger text-red-500">{{ $message }}</div>@endforeach  
+                            
                     </div> 
+                    
             @endforeach
         </div>
+        @foreach ($errors->get('options') as $message)
+                            <div class="alert alert-danger text-red-500">{{ $message }}</div>@endforeach 
         <div class="flex w-full" style="justify-content: end">
             <button class="btn mt-3" wire:click.prevent="createPoll">Create Poll</button>
         </div>
